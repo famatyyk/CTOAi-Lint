@@ -1,5 +1,7 @@
 # CTOAi-Lint
 
+[![Self-Lint](https://github.com/famatyyk/CTOAi-Lint/actions/workflows/lint.yml/badge.svg)](https://github.com/famatyyk/CTOAi-Lint/actions)
+
 Darmowy, lekki linter **C++ / Lua / Python** — statyczna analiza read-only.
 Demo silnika za [CTOAi Project Doctor](https://ctoai-funnel.fly.dev/).
 

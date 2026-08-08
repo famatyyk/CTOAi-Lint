@@ -1,0 +1,24 @@
+name: Self-Lint
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install ctoai-lint (z tego repo)
+        run: pip install git+https://github.com/famatyyk/CTOAi-Lint
+      - name: Lint repo
+        run: ctoai-lint . --json
+      - name: Badge (wynik)
+        run: |
+          OUT=$(ctoai-lint . --json)
+          HEALTH=$(echo "$OUT" | python -c "import sys,json;print(json.load(sys.stdin)['health'])")
+          echo "Project Health tego repo: $HEALTH/100"
