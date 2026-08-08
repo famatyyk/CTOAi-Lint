@@ -1,0 +1,48 @@
+Metadata-Version: 2.4
+Name: ctoai-lint
+Version: 0.1.0
+Summary: Lekki, darmowy linter C++ / Lua / Python (static, read-only). Demo silnika CTOAi Project Doctor.
+Author: famatyyk
+License: MIT
+Project-URL: Homepage, https://ctoai-funnel.fly.dev/
+Project-URL: Repository, https://github.com/famatyyk/CTOAi-Lint
+Keywords: lint,cpp,lua,python,static-analysis,devtools
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Software Development :: Quality Assurance
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+# CTOAi-Lint
+
+Darmowy, lekki linter **C++ / Lua / Python** — statyczna analiza read-only.
+Demo silnika za [CTOAi Project Doctor](https://ctoai-funnel.fly.dev/).
+
+## Instalacja
+```bash
+pip install ctoai-lint
+```
+
+## Użycie
+```bash
+ctoai-lint .                 # audyt biezacego katalogu
+ctoai-lint src/ --json      # wyjscie JSON
+```
+
+## Co wykrywa
+- **C/C++**: `strcpy`, `strcat`, `gets`, `sprintf`, `scanf` (high)
+- **Lua**: `load`, `loadstring`, `os.execute`, `io.popen` (high)
+- **Python**: `eval`, `exec`, `os.system`, `subprocess.call`, `pickle.loads` (medium)
+- **Sekrety**: podejrzane przypisania `api_key=...`, `password=...` (high)
+
+## Project Health
+`health = 100 - 8*high - 3*medium` (min 0).
+
+## Legalne
+Tylko analiza plikow tekstowych. Brak modyfikacji kodu, brak injection.
+
+## Pełna wersja (płatna)
+Project Doctor: C++, Lua, Python, JS, TS, CMake, 5 kroków naprawczych, GitHub Action (Doctor CI).
+https://ctoai-funnel.fly.dev/
+
+MIT — używaj swobodnie.

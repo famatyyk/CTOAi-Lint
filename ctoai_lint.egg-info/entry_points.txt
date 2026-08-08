@@ -1,0 +1,2 @@
+[console_scripts]
+ctoai-lint = ctoai_lint.cli:main

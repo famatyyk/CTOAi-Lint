@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ctoai-lint"
+version = "0.1.0"
+description = "Lekki, darmowy linter C++ / Lua / Python (static, read-only). Demo silnika CTOAi Project Doctor."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "famatyyk" }]
+keywords = ["lint", "cpp", "lua", "python", "static-analysis", "devtools"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Software Development :: Quality Assurance",
+]
+
+[project.urls]
+Homepage = "https://ctoai-funnel.fly.dev/"
+Repository = "https://github.com/famatyyk/CTOAi-Lint"
+
+[project.scripts]
+ctoai-lint = "ctoai_lint.cli:main"
